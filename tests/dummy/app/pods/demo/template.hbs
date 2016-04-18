@@ -1,2 +1,13 @@
-frost-file-picker testbed
-{{frost-file-picker}}
+
+<div class="dummy-header">File input</div>
+<div class="dummy-padding">
+    <div class="dummy-input">
+      {{frost-file-picker
+      validate=(action "validateFile")
+      on-change=(action "fileChanged")}}
+      {{frost-file-picker
+      accept='.txt'
+      validate=(action "validateFile")}}
+    </div>
+
+</div>

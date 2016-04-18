@@ -54,8 +54,10 @@
     "ember-computed-decorators": "^0.2.2",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-sass": "^5.2.0",
-    "ember-frost-theme": "^1.0.1",
-    "liquid-fire": "^0.22.0"
+    "liquid-fire": "^0.22.0",
+    "ember-frost-core": "^0.0.13",
+    "ember-frost-theme": "^1.4.4",
+    "ember-frost-css-core": "^1.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

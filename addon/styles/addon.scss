@@ -1,1 +1,58 @@
 @import 'node_modules/ember-frost-theme/scss/frost-theme';
+
+.frost-file-picker {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.frost-file-picker.full {
+  flex: 1;
+}
+
+.frost-file-picker .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+}
+
+.frost-file-picker .overlay .text {
+  display: block;
+  padding: 32px 0 0 0;
+  cursor: text;
+}
+
+.frost-file-picker .overlay .button,
+.frost-file-picker .overlay .button input {
+  display: block;
+  padding: 32px 0 0 0;
+  cursor: pointer;
+}
+
+.frost-file-picker .background {
+  flex: 1;
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.frost-file-picker .frost-text,
+.frost-file-picker .overlay .text {
+  flex: 1;
+}
+
+.frost-file-picker .frost-text:read-only {
+  border-bottom: 1px solid $frost-color-grey-6;
+}
+
+.frost-file-picker .frost-button.file,
+.frost-file-picker .overlay .button {
+  width: 120px;
+  border: none;
+  border-left: 1px solid $frost-color-grey-6;
+  border-bottom: 1px solid $frost-color-grey-6;
+}
+
