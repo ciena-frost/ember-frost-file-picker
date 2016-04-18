@@ -1,2 +1,8 @@
-ember-frost-file-picker component
-{{yield}}
+<div class="overlay">
+  {{input type="file" accept=accept class="text frost-file-select"}}
+  {{input type="file" accept=accept class="button frost-file-select"}}
+</div>
+<div class="background">
+  {{frost-text value=fileName readonly=true}}
+  {{#frost-button class="text small tertiary file"}}Browse...{{/frost-button}}
+</div>
