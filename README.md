@@ -11,10 +11,10 @@
 
 # ember-frost-file-picker
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
- * [Contributing](#Contributing)
+ * [Installation](#installation)
+ * [API](#api)
+ * [Examples](#examples)
+ * [Contributing](#development)
 
 ## Installation
 ```
