@@ -30,6 +30,7 @@
     "ember-cli-sass": "^5.2.0",
     "ember-cli-sri": "^2.0.0",
     "ember-cli-uglify": "^1.2.0",
+    "ember-computed-decorators": ">=0.2.2 <2.0.0",
     "ember-data": "~2.3.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
@@ -40,6 +41,7 @@
     "ember-cli-mirage": "~0.1.11",
     "ember-cli-mocha": "^0.10.0",
     "ember-cli-notifications": "^3.2.0",
+    "ember-frost-core": ">=0.3.0 <2.0.0",
     "ember-lodash": "~0.0.6",
     "ember-truth-helpers": "^1.2.0",
     "eslint": "2.2.0",
@@ -51,11 +53,9 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
-    "ember-computed-decorators": "^0.2.2",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-sass": "^5.2.0",
-    "liquid-fire": "^0.22.0",
-    "ember-frost-core": ">=0.3.0 <2.0.0"
+    "liquid-fire": "^0.22.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
