@@ -44,7 +44,7 @@ export default Ember.Component.extend({
     } else {
       this.set('fileName', files[0].name)
       if (_.isFunction(this.attrs['on-change'])) {
-        this.attrs['on-change']({id: this.get('id'), type: 'file', value: files[0]})
+        this.attrs['onChange']({id: this.get('id'), type: 'file', value: files[0]})
       }
     }
   },
