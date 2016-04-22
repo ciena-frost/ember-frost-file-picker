@@ -3,6 +3,11 @@
   {{input type="file" accept=accept class="button frost-file-select"}}
 </div>
 <div class="background">
-  {{frost-text value=fileName readonly=true}}
-  {{#frost-button class="text small tertiary file"}}Browse...{{/frost-button}}
+  {{frost-text
+    value=fileName
+    readonly=true}}
+  {{frost-button
+    size="small"
+    priority="tertiary"
+    text='Browse'}}
 </div>
