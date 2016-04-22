@@ -38,14 +38,14 @@ export default Component.extend({
       this.attrs['validate'](files[0]).then((result) => {
         if (result.valid) {
           this.set('fileName', files[0].name)
-          if (_.isFunction(this.attrs['on-change'])) {
-            this.attrs['on-change']({id: this.get('id'), type: 'file', value: files[0]})
+          if (_.isFunction(this.attrs['onChange'])) {
+            this.attrs['onChange']({id: this.get('id'), type: 'file', value: files[0]})
           }
         }
       })
     } else {
       this.set('fileName', files[0].name)
-      if (_.isFunction(this.attrs['on-change'])) {
+      if (_.isFunction(this.attrs['onChange'])) {
         this.attrs['onChange']({id: this.get('id'), type: 'file', value: files[0]})
       }
     }
