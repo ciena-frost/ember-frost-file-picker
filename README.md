@@ -9,7 +9,7 @@
 
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
-# ember-frost-file-picker
+# ember-frost-file-picker 
 
  * [Installation](#installation)
  * [API](#api)
