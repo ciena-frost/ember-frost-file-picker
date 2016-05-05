@@ -14,7 +14,7 @@
  * [Installation](#installation)
  * [API](#api)
  * [Examples](#examples)
- * [Contributing](#development)
+ * [Development](#development)
 
 ## Installation
 ```
@@ -31,7 +31,10 @@ ember install ember-frost-file-picker
 
 ### Example
 ```handlebars
-Coming soon
+{{frost-file-picker
+ accept='.jpeg'
+ validate=(action "validateFile")
+ onChange=(action "fileChanged")}}
 ```
 
 ## Development
