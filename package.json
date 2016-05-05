@@ -41,10 +41,10 @@
     "ember-cli-mirage": "~0.1.11",
     "ember-cli-mocha": "^0.10.0",
     "ember-cli-notifications": "^3.2.0",
-    "ember-frost-core": ">=0.3.0 <2.0.0",
+    "ember-frost-core": ">=0.7.0 <2.0.0",
     "ember-lodash": "~0.0.6",
     "ember-truth-helpers": "^1.2.0",
-    "eslint": "2.8.0",
+    "eslint": "^2.9.0",
     "eslint-config-frost-standard": "^2.0.0"
   },
   "keywords": [
