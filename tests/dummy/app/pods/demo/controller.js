@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
       })
     },
 
-    fileChanged (attrs) {
+    onChangeHandler (attrs) {
       var file = attrs.value
       this.notifications.addNotification({
         message: 'Changed filename: ' + file.name,

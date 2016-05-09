@@ -12,15 +12,9 @@ describeComponent(
     it('renders', function () {
       // Set any properties with this.set('myProperty', 'value')
       // Handle any actions with this.on('myAction', function (val) { ... })
-      // Template block usage:
-      // this.render(hbs`
-      //   {{#frost-file-picker}}
-      //     template content
-      //   {{/frost-file-picker}}
-      // `)
 
       this.render(hbs`{{frost-file-picker}}`)
-      expect(this.$()).to.have.length(1)
+      expect(this.$('.frost-file-picker')).to.have.length(1)
     })
   }
 )
