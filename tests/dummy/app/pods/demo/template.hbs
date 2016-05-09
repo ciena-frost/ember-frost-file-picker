@@ -1,10 +1,59 @@
 
-<div class="dummy-header">File input</div>
-<div class="dummy-padding">
-    <div class="dummy-input">
-      {{frost-file-picker
-        accept='.jpeg'
-        validate=(action "validateFile")
-        onChange=(action "fileChanged")}}
+<div class='dummy-body'>
+  <div class="section-title">Default</div>
+  <hr>
+  <div class='section'>
+    <div class='example'>
+      <div class='demo'>
+        {{frost-file-picker
+          accept='.jpeg'
+        }}
+      </div>
+      <div class='snippet'>
+        {{format-markdown "```handlebars
+{{frost-file-picker
+  accept='.jpeg'
+}}
+```"}}
+      </div>
     </div>
+  </div>
+  <div class="section-title">Events</div>
+  <hr>
+  <div class='section'>
+    <div class='example'>
+      <div class="title">validate</div>
+      <div class='demo'>
+        {{frost-file-picker
+          accept='.txt'
+          validate=(action "validateFile")
+        }}
+      </div>
+      <div class='snippet'>
+        {{format-markdown "```handlebars
+{{frost-file-picker
+  accept='.txt'
+  validate=(action 'validateFile')
+}}
+```"}}
+      </div>
+    </div>
+    <div class='example'>
+      <div class="title">onChange</div>
+      <div class='demo'>
+        {{frost-file-picker
+          accept='.jpeg'
+          onChange=(action "onChangeHandler")
+        }}
+      </div>
+      <div class='snippet'>
+        {{format-markdown "```handlebars
+{{frost-file-picker
+  accept='.jpeg'
+  onChange=(action 'onChangeHandler')
+}}
+```"}}
+      </div>
+    </div>
+  </div>
 </div>

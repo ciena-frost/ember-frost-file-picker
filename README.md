@@ -9,7 +9,8 @@
 
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
-# ember-frost-file-picker 
+# ember-frost-file-picker
+A component for picking files
 
  * [Installation](#installation)
  * [API](#api)
@@ -25,7 +26,9 @@ ember install ember-frost-file-picker
 
 | Attribute | Type | Value | Description |
 | --------- | ---- | ----- | ----------- |
-| ` ` | ` ` | ` ` | Coming soon |
+| `accept` | `string` | `<file-extension>` | Comma separated list of file types accepted |
+| `onChange` | `string` | `<action-name>` | Triggers action when file selection changes |
+| `validate` | `string` | `<action-name>` | Action to trigger to validate file content |
 
 ## Examples
 
