@@ -2,12 +2,7 @@ import Ember from 'ember'
 import layout from '../templates/components/frost-file-picker'
 import _ from 'lodash'
 
-const {
-  Component,
-  isNone,
-  on,
-  run,
-} = Ember
+const {Component, isNone, on, run} = Ember
 
 // Base design from https://github.com/funkensturm/ember-cli-file-picker
 export default Component.extend({
@@ -16,7 +11,7 @@ export default Component.extend({
   classNameBindings: ['fileName'],
   accept: '*',
 
-  initContext: on('didInitAttrs', function() {
+  initContext: on('didInitAttrs', function () {
     this.addObserver('value', () => {
       if (isNone(this.get('value'))) {
         this.set('file', null)
@@ -25,18 +20,20 @@ export default Component.extend({
     })
   }),
 
-  bindChange: on('didInsertElement', function() {
+  bindChange: on('didInsertElement', function () {
     this.$('.frost-file-select').on('change', run.bind(this, 'filesSelected'))
   }),
 
-  unbindChange: on('willDestroyElement', function() {
+  unbindChange: on('willDestroyElement', function () {
     this.$('.frost-file-select').off('change', run.bind(this, 'filesSelected'))
   }),
 
-  filesSelected(files) {
-    this.set('fileName', null)
-    if(!(files instanceof FileList))
+  filesSelected: function (files) {
+    if (!(files instanceof FileList)) {
       files = event.target.files
+    }
+    this.set('fileName', null)
+
     if (typeof(this.attrs['validate']) === 'function') {
       this.attrs['validate'](files[0]).then((result) => {
         if (result.valid) {
@@ -61,25 +58,25 @@ export default Component.extend({
       }
     }
   },
-  click: function(event) {
+  click: function (event) {
     if (!this.$(event.target).hasClass('frost-file-select')) {
       this.$('.frost-file-select').trigger('click')
     }
   },
-  dragOver: function(event) {
+  dragOver: function (event) {
     event.preventDefault()
     this.$('.background').addClass('over')
   },
-  drop: function(event) {
+  drop: function (event) {
     event.preventDefault()
     this.filesSelected(event.dataTransfer.files)
     this.$('.background').removeClass('over')
   },
-  dragEnter: function(event) {
+  dragEnter: function (event) {
     event.preventDefault()
     this.$('.background').addClass('over')
   },
-  dragLeave: function(event) {
+  dragLeave: function (event) {
     event.preventDefault()
     this.$('.background').removeClass('over')
   }
