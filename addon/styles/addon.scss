@@ -59,6 +59,7 @@
 .frost-file-picker .file-select-overlay .button {
   width: 70px;
   border: none;
+  // Note: using separate border properties instead of "border-bottom" due to issues with animations/transitions
   border-bottom-color: $frost-color-grey-6;
   border-bottom-style: solid;
   border-bottom-width: 1px;

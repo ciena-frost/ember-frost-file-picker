@@ -24,6 +24,16 @@ export default Component.extend({
   unbindChange: on('willDestroyElement', function () {
     this.$('.frost-file-select').off('change', run.bind(this, 'filesSelected'))
   }),
+  _getFiles (files) {
+    if (!(files instanceof window.FileList)) {
+      files = files.target.files
+    }
+    return [].slice.call(files)
+  },
+  _updateFileName (files) {
+    const name = files.reduce((e, r) => `${e}${r.name}, `, '')
+    this.set('fileName', name.slice(0, -2))
+  },
   fireHandler: function (file) {
     if (typeof this.attrs['onChange'] === 'function') {
       this.attrs['onChange']({
@@ -34,13 +44,10 @@ export default Component.extend({
     }
   },
   filesSelected: function (files) {
-    if (!(files instanceof window.FileList)) {
-      files = files.target.files
-    }
-    files = [].slice.call(files)
+    files = this._getFiles(files);
+    this._updateFileName(files)
+
     let self = this
-    let name = files.reduce((e, r) => `${e}${r.name}, `, '')
-    this.set('fileName', name.slice(0, -2))
     files.forEach((file) => {
       new Promise(function (resolve, reject) {
         if (typeof (self.attrs['validate']) === 'function') {
@@ -63,21 +70,21 @@ export default Component.extend({
       this.$('.frost-file-select').trigger('click')
     }
   },
-  dragOver: function (event) {
+  _setDragging(event, state) {
     event.preventDefault()
-    this.set('isDragging', true)
+    this.set('isDragging', state)
+  },
+  dragOver: function (event) {
+    this._setDragging(event, true)
   },
   dragEnter: function (event) {
-    event.preventDefault()
-    this.set('isDragging', true)
+    this._setDragging(event, true)
   },
   dragLeave: function (event) {
-    event.preventDefault()
-    this.set('isDragging', false)
+    this._setDragging(event, false)
   },
   drop: function (event) {
-    event.preventDefault()
-    this.set('isDragging', false)
+    this._setDragging(event, false)
     this.filesSelected(event.dataTransfer.files)
   }
 })
