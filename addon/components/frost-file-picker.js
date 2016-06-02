@@ -29,12 +29,12 @@ export default Component.extend({
   }),
 
   filesSelected: function (files) {
-    if (!(files instanceof FileList)) {
-      files = event.target.files
+    if (!(files instanceof window.FileList)) {
+      files = files.target.files
     }
     this.set('fileName', null)
 
-    if (typeof(this.attrs['validate']) === 'function') {
+    if (typeof (this.attrs['validate']) === 'function') {
       this.attrs['validate'](files[0]).then((result) => {
         if (result.valid) {
           this.set('fileName', files[0].name)
