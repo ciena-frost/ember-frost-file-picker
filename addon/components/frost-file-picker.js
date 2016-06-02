@@ -34,7 +34,7 @@ export default Component.extend({
     const name = files.reduce((e, r) => `${e}${r.name}, `, '')
     this.set('fileName', name.slice(0, -2))
   },
-  fireHandler: function (file) {
+  fireHandler (file) {
     if (typeof this.attrs['onChange'] === 'function') {
       this.attrs['onChange']({
         id: this.get('id'),
@@ -43,8 +43,8 @@ export default Component.extend({
       })
     }
   },
-  filesSelected: function (files) {
-    files = this._getFiles(files);
+  filesSelected (files) {
+    files = this._getFiles(files)
     this._updateFileName(files)
 
     let self = this
@@ -65,25 +65,25 @@ export default Component.extend({
         .catch(this.attrs['onError'])
     })
   },
-  click: function (event) {
+  click (event) {
     if (!this.$(event.target).hasClass('frost-file-select')) {
       this.$('.frost-file-select').trigger('click')
     }
   },
-  _setDragging(event, state) {
+  _setDragging (event, state) {
     event.preventDefault()
     this.set('isDragging', state)
   },
-  dragOver: function (event) {
+  dragOver (event) {
     this._setDragging(event, true)
   },
-  dragEnter: function (event) {
+  dragEnter (event) {
     this._setDragging(event, true)
   },
-  dragLeave: function (event) {
+  dragLeave (event) {
     this._setDragging(event, false)
   },
-  drop: function (event) {
+  drop (event) {
     this._setDragging(event, false)
     this.filesSelected(event.dataTransfer.files)
   }
