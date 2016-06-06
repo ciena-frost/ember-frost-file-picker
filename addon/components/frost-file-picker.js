@@ -1,6 +1,5 @@
 import Ember from 'ember'
 import layout from '../templates/components/frost-file-picker'
-import _ from 'lodash'
 
 const {Component, isNone, on, run} = Ember
 
@@ -8,8 +7,7 @@ const {Component, isNone, on, run} = Ember
 export default Component.extend({
   layout: layout,
   classNames: ['frost-file-picker'],
-  classNameBindings: ['fileName'],
-
+  classNameBindings: ['isDragging:over:'],
   accept: '*',
 
   initContext: on('didInitAttrs', function () {
@@ -20,40 +18,73 @@ export default Component.extend({
       }
     })
   }),
-
   bindChange: on('didInsertElement', function () {
     this.$('.frost-file-select').on('change', run.bind(this, 'filesSelected'))
   }),
-
   unbindChange: on('willDestroyElement', function () {
     this.$('.frost-file-select').off('change', run.bind(this, 'filesSelected'))
   }),
-
-  filesSelected: function (event) {
-    this.set('fileName', null)
-
-    let files = event.target.files
-
-    if (typeof (this.attrs['validate']) === 'function') {
-      this.attrs['validate'](files[0]).then((result) => {
-        if (result.valid) {
-          this.set('fileName', files[0].name)
-          if (_.isFunction(this.attrs['onChange'])) {
-            this.attrs['onChange']({id: this.get('id'), type: 'file', value: files[0]})
-          }
-        }
+  _getFiles (files) {
+    if (!(files instanceof window.FileList)) {
+      files = files.target.files
+    }
+    return [].slice.call(files)
+  },
+  _updateFileName (files) {
+    const name = files.reduce((e, r) => `${e}${r.name}, `, '')
+    this.set('fileName', name.slice(0, -2))
+  },
+  fireHandler (file) {
+    if (typeof this.attrs['onChange'] === 'function') {
+      this.attrs['onChange']({
+        id: this.get('id'),
+        type: 'file',
+        value: file
       })
-    } else {
-      this.set('fileName', files[0].name)
-      if (_.isFunction(this.attrs['onChange'])) {
-        this.attrs['onChange']({id: this.get('id'), type: 'file', value: files[0]})
-      }
     }
   },
+  filesSelected (files) {
+    files = this._getFiles(files)
+    this._updateFileName(files)
 
-  click: function (event) {
+    let self = this
+    files.forEach((file) => {
+      new Promise(function (resolve, reject) {
+        if (typeof (self.attrs['validate']) === 'function') {
+          self.attrs['validate'](file).then((result) => {
+            result.valid ? resolve(file) : reject(result)
+          })
+        } else {
+          try {
+            resolve(file)
+          } catch (e) {
+            reject(e)
+          }
+        }
+      }).then(this.get('fireHandler').bind(this))
+        .catch(this.attrs['onError'])
+    })
+  },
+  click (event) {
     if (!this.$(event.target).hasClass('frost-file-select')) {
       this.$('.frost-file-select').trigger('click')
     }
+  },
+  _setDragging (event, state) {
+    event.preventDefault()
+    this.set('isDragging', state)
+  },
+  dragOver (event) {
+    this._setDragging(event, true)
+  },
+  dragEnter (event) {
+    this._setDragging(event, true)
+  },
+  dragLeave (event) {
+    this._setDragging(event, false)
+  },
+  drop (event) {
+    this._setDragging(event, false)
+    this.filesSelected(event.dataTransfer.files)
   }
 })

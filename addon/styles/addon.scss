@@ -4,19 +4,22 @@
   position: relative;
   display: flex;
   flex-direction: row;
-}
-
-.frost-file-picker.full {
-  flex: 1;
-}
-
-.frost-file-picker .file-select-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  opacity: 0;
+  .file-select-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+  }
+  &.full {
+    flex: 1;
+  }
+  &.over {
+    .frost-text {
+      border-bottom-color:$frost-color-blue-3 !important;
+    }
+  }
 }
 
 .frost-file-picker .file-select-overlay .text {
@@ -39,19 +42,26 @@
   align-items: flex-end;
 }
 
+
 .frost-file-picker .frost-text,
 .frost-file-picker .file-select-overlay .text {
+  transition: border-bottom-color 1s ease;
   width: 100%;
 }
 
 .frost-file-picker .frost-text:read-only {
-  border-bottom: 1px solid $frost-color-grey-6;
+  border-bottom-color: $frost-color-grey-6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 .frost-file-picker .frost-button.file,
 .frost-file-picker .file-select-overlay .button {
   width: 70px;
   border: none;
+  // Note: using separate border properties instead of "border-bottom" due to issues with animations/transitions
+  border-bottom-color: $frost-color-grey-6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   border-left: 1px solid $frost-color-grey-6;
-  border-bottom: 1px solid $frost-color-grey-6;
 }
