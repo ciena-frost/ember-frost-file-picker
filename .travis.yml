@@ -3,10 +3,12 @@ sudo: false
 node_js:
 - '5.0'
 - 'stable'
+  
 branches:
   except:
   - /^v[0-9\.]+/
 addons:
+  firefox: "latest"
   apt:
     sources:
     - ubuntu-toolchain-r-test
