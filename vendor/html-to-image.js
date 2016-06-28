@@ -7,7 +7,10 @@ htmlFiles.push(fs.workingDirectory + fs.separator + args[1])
 
 // output pages as PNG
 var pageindex = 0
-
+page.viewportSize = {
+  width: 600,
+  height: 800
+};
 var interval = setInterval(function () {
   if (!loadInProgress && pageindex < htmlFiles.length) {
     console.log('image ' + (pageindex + 1))
