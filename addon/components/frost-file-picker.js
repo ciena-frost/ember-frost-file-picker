@@ -49,7 +49,7 @@ export default Component.extend({
 
     let self = this
     files.forEach((file) => {
-      new Promise(function (resolve, reject) {
+      new Ember.RSVP.Promise(function (resolve, reject) {
         if (typeof (self.attrs['validate']) === 'function') {
           self.attrs['validate'](file).then((result) => {
             result.valid ? resolve(file) : reject(result)
