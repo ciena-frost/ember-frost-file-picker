@@ -10,13 +10,18 @@ describeComponent(
     integration: true
   },
   function () {
-    it('renders', function () {
+    it('renders', function (done) {
       // Set any properties with this.set('myProperty', 'value')
       // Handle any actions with this.on('myAction', function (val) { ... })
 
       this.render(hbs`{{frost-file-picker}}`)
       expect(this.$('.frost-file-picker')).to.have.length(1)
-      return capture('Basic-File-Picker')
+      capture('Basic-File-Picker').then(function (params) {
+        console.log(arguments)
+        done()
+      }).catch(function (err) {
+        done(err)
+      })
     })
 
     it('uploads a file', function () {
