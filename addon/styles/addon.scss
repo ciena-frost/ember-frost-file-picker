@@ -4,64 +4,65 @@
   position: relative;
   display: flex;
   flex-direction: row;
+
   .file-select-overlay {
     position: absolute;
+    top: 3px;
+    left: 2px;
     width: 100%;
-    height: 100%;
+    height: 35px;
     display: flex;
     flex-direction: row;
     opacity: 0;
+
+    .text {
+      display: block;
+      padding: 35px 0 0 0;
+      cursor: text;
+      width: 100%;
+    }
+
+    .button {
+      display: block;
+      padding: 35px 0 0 0;
+      cursor: pointer;
+      width: 70px;
+    }
   }
+
+  .background {
+    height: 37px;
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid $frost-color-grey-6;
+
+    .frost-text {
+      border-right: 1px solid $frost-color-grey-6;
+    }
+  }
+
   &.full {
     flex: 1;
   }
+
   &.over {
-    .frost-text {
-      border-bottom-color:$frost-color-blue-3 !important;
+    .background {
+      border: 1px dashed $frost-color-blue-1;
+      .frost-text {
+        border-right: 1px dashed $frost-color-blue-1;
+      }
     }
   }
-}
 
-.frost-file-picker .file-select-overlay .text {
-  display: block;
-  padding: 32px 0 0 0;
-  cursor: text;
-}
+  .frost-text {
+    width: 100%;
+  }
 
-.frost-file-picker .file-select-overlay .button,
-.frost-file-picker .file-select-overlay .button input {
-  display: block;
-  padding: 32px 0 0 0;
-  cursor: pointer;
-}
-
-.frost-file-picker .background {
-  flex: 1;
-  display:flex;
-  flex-direction: row;
-  align-items: flex-end;
-}
-
-
-.frost-file-picker .frost-text,
-.frost-file-picker .file-select-overlay .text {
-  transition: border-bottom-color 1s ease;
-  width: 100%;
-}
-
-.frost-file-picker .frost-text:read-only {
-  border-bottom-color: $frost-color-grey-6;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-}
-
-.frost-file-picker .frost-button.file,
-.frost-file-picker .file-select-overlay .button {
-  width: 70px;
-  border: none;
-  // Note: using separate border properties instead of "border-bottom" due to issues with animations/transitions
-  border-bottom-color: $frost-color-grey-6;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left: 1px solid $frost-color-grey-6;
+  .frost-button {
+    &.file {
+      width: 70px;
+    }
+  }
 }
