@@ -16,7 +16,7 @@ describeComponent(
 
       this.render(hbs`{{frost-file-picker}}`)
       expect(this.$('.frost-file-picker')).to.have.length(1)
-      return capture('Basic-File-Picker')
+      return capture('Basic-File-Picker', {experimentalSvgs: true})
     })
 
     it('uploads a file', function () {
@@ -44,7 +44,7 @@ describeComponent(
 
       uploadFileHelper(['test'])
 
-      return capture('File-upload')
+      return capture('File-upload', {experimentalSvgs: true})
     })
   }
 )
