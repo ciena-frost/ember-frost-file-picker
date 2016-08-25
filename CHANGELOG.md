@@ -1,3 +1,6 @@
+# 0.2.16
+- Update visual acceptance
+
 # 0.2.15
 - Update visual acceptance
 
