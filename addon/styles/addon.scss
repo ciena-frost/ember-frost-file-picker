@@ -12,19 +12,13 @@
     display: flex;
     flex-direction: row;
     opacity: 0;
+    width: calc(100% - 70px);
 
     &-text {
       display: block;
       padding: 33px 0 0 0;
       cursor: text;
       width: 100%;
-    }
-
-    &-button {
-      display: block;
-      padding: 33px 0 0 0;
-      cursor: pointer;
-      width: 70px;
     }
   }
 
