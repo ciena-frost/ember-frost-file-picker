@@ -7,15 +7,24 @@ import hbs from 'htmlbars-inline-precompile'
 import {afterEach, beforeEach, describe} from 'mocha'
 import sinon from 'sinon'
 
-// FIXME: jsdoc
-function createFile (content = ['test'], options = {}) {
-  const file = new Blob(content, {type: 'text/plain'})
-  file.name = 'test.txt'
+/**
+ * Create a new file with the given content and options
+ * @param {array} content for Blob constructor
+ * @param {object} options for Blob constructor
+ * @returns {blob} the new file
+ */
+function createFile (content = ['test'], options = {type: 'text/plain'}) {
+  const file = new Blob(content, options)
+  file.name = content[0] + '.txt'
 
   return file
 }
 
-// FIXME: jsdoc
+/**
+ * Trigger change event with file
+ * @param {array} content for Blob constructor
+ * @param {object} options for Blob constructor
+ */
 function uploadFileHelper (content, options) {
   const file = createFile(content, options)
   const event = $.Event('change')
