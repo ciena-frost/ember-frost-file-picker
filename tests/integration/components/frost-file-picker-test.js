@@ -2,6 +2,8 @@
 import {expect, assert} from 'chai'
 import {describeComponent, it} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
+import {beforeEach, afterEach} from 'mocha'
+import sinon from 'sinon'
 
 describeComponent(
   'frost-file-picker',
@@ -10,6 +12,15 @@ describeComponent(
     integration: true
   },
   function () {
+    let sandbox, validateDragStub
+    beforeEach(function () {
+      sandbox = sinon.sandbox.create()
+      validateDragStub = sandbox.stub()
+    })
+    afterEach(function () {
+      sandbox.restore()
+    })
+
     it('renders', function () {
       // Set any properties with this.set('myProperty', 'value')
       // Handle any actions with this.on('myAction', function (val) { ... })
@@ -45,6 +56,28 @@ describeComponent(
       uploadFileHelper(['test'])
 
       return capture('File-upload', {experimentalSvgs: true})
+    })
+
+    it('shows custom placeholder text', function () {
+      this.set('text', 'Custom placeholder')
+      this.render(hbs`{{frost-file-picker placeholderText=text}}`)
+      expect(this.$('.frost-text input').attr('placeholder')).to.eql('Custom placeholder')
+    })
+
+    it('calls validateDrag on dragEnter and passes it the event', function () {
+      this.set('validateDragStub', validateDragStub)
+      this.render(hbs`{{frost-file-picker validateDrag=validateDragStub}}`)
+      const e = $.Event('dragenter')
+      this.$('.frost-file-picker').trigger(e)
+      expect(this.get('validateDragStub').lastCall.args).to.eql([e])
+    })
+
+    it('calls validateDrag on dragOver and passes it the event', function () {
+      this.set('validateDragStub', validateDragStub)
+      this.render(hbs`{{frost-file-picker validateDrag=validateDragStub}}`)
+      const e = $.Event('dragover')
+      this.$('.frost-file-picker').trigger(e)
+      expect(this.get('validateDragStub').lastCall.args).to.eql([e])
     })
   }
 )
