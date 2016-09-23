@@ -76,22 +76,18 @@ export default Component.extend({
     this.set('isDragging', state)
   },
   dragOver (event) {
-    if (this.get('validateDrag')) {
-      if (this.validateDrag(event)) {
-        this._setDragging(event, true)
-      }
-    } else {
-      this._setDragging(event, true)
+    if (this.validateDrag && !this.validateDrag(event)) {
+      return
     }
+
+    this._setDragging(event, true)
   },
   dragEnter (event) {
-    if (this.get('validateDrag')) {
-      if (this.validateDrag(event)) {
-        this._setDragging(event, true)
-      }
-    } else {
-      this._setDragging(event, true)
+    if (this.validateDrag && !this.validateDrag(event)) {
+      return
     }
+
+    this._setDragging(event, true)
   },
   dragLeave (event) {
     this._setDragging(event, false)
