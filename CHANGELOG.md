@@ -1,3 +1,9 @@
+# 1.1.0
+* Added validateDrag parameter to determine if isDragging should be applied
+* Added placeholderText parameter to specify custom placeholder text
+
+
+
 # 1.0.0
 No CHANGELOG section found in Pull Request description.
 Use a `# CHANGELOG` section in your Pull Request description to auto-populate the `CHANGELOG.md`
