@@ -9,6 +9,7 @@ export default Component.extend({
   classNames: ['frost-file-picker'],
   classNameBindings: ['isDragging:over:'],
   accept: '*',
+  placeholderText: 'Drop your file here',
 
   initContext: on('didInitAttrs', function () {
     this.addObserver('value', () => {
@@ -75,9 +76,17 @@ export default Component.extend({
     this.set('isDragging', state)
   },
   dragOver (event) {
+    if (this.validateDrag && !this.validateDrag(event)) {
+      return
+    }
+
     this._setDragging(event, true)
   },
   dragEnter (event) {
+    if (this.validateDrag && !this.validateDrag(event)) {
+      return
+    }
+
     this._setDragging(event, true)
   },
   dragLeave (event) {

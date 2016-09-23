@@ -28,7 +28,9 @@ ember install ember-frost-file-picker
 | --------- | ---- | ----- | ----------- |
 | `accept` | `string` | `<file-extension>` | Comma separated list of file types accepted |
 | `onChange` | `string` | `<action-name>` | Triggers action when file selection changes |
+| `placeholderText` | `string` | `<input-placeholder>` | Defines input placeholder text. Default is 'Drop your file here' |
 | `validate` | `string` | `<action-name>` | Action to trigger to validate file content |
+| `validateDrag` | `string` | `<action-name>` | Action to trigger to determine if `isDragging` should be applied. In Chrome, you can check event.dataTransfer.items[0] for information on the item being dragged |
 
 ## Examples
 
