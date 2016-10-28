@@ -9,16 +9,19 @@ export default Component.extend({
   classNames: ['frost-file-picker'],
   classNameBindings: ['isDragging:over:'],
   accept: '*',
+  hook: 'file-picker',
   placeholderText: 'Drop your file here',
 
-  initContext: on('didInitAttrs', function () {
+  init () {
+    this._super(...arguments)
     this.addObserver('value', () => {
       if (isNone(this.get('value'))) {
         this.set('file', null)
         this.set('fileName', null)
       }
     })
-  }),
+  },
+
   bindChange: on('didInsertElement', function () {
     this.$('.frost-file-select').on('change', run.bind(this, 'filesSelected'))
   }),

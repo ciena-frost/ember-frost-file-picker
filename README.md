@@ -50,6 +50,12 @@ ember install ember-frost-file-picker
 | `validate` | `string` | `<action-name>` | Action to trigger to validate file content |
 | `validateDrag` | `string` | `<action-name>` | Action to trigger to determine if `isDragging` should be applied. In Chrome, you can check event.dataTransfer.items[0] for information on the item being dragged |
 
+## Testing with ember-hook
+The file picker component is accessible using ember-hook with the top level hook name or you can access the internal components as well -
+* Default top level hook - `$hook('file-picker')`
+* Browse button hook - `$hook('<hook-name>-button')`
+* Input field hook - `$hook('<hook-name>-input')`
+
 ## Examples
 Detailed API and example usage can be found in the sample application in tests/dummy, which is also running at http://ciena-frost.github.io/ember-frost-file-picker
 
