@@ -1,37 +1,37 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-theme';
 
 .frost-file-picker {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
 
   .file-select-overlay {
-    position: absolute;
-    width: 100%;
-    height: 31px;
     display: flex;
+    position: absolute;
     flex-direction: row;
-    opacity: 0;
     width: calc(100% - 70px);
+    height: 31px;
+    opacity: 0;
 
     &-text {
       display: block;
-      padding: 33px 0 0 0;
-      cursor: text;
       width: 100%;
+      padding: 33px 0 0;
+      cursor: text;
     }
   }
 
   .background {
-    height: 33px;
+    display: flex;
     flex: 1;
-    display:flex;
     flex-direction: row;
     align-items: center;
+    height: 33px;
     border: 1px solid $frost-color-grey-6;
 
     .frost-text {
       border-right: 1px solid $frost-color-grey-6;
+
       > input {
         height: 31px;
       }
@@ -45,6 +45,7 @@
   &.over {
     .background {
       border: 1px dashed $frost-color-blue-1;
+
       .frost-text {
         border-right: 1px dashed $frost-color-blue-1;
       }

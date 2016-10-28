@@ -7,40 +7,50 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build",
     "start": "ember server",
-    "test": "npm run lint && ember test",
-    "lint": "eslint *.js addon app blueprints config tests"
+    "build": "ember build",
+    "test": "npm run lint && COVERAGE=true ember test",
+    "lint": "npm run eslint && npm run sass-lint && npm run md-lint",
+    "eslint": "eslint *.js addon app blueprints config tests --fix",
+    "md-lint": "remark *.md",
+    "sass-lint": "sass-lint -q -v"
   },
   "repository": "git@github.com:ciena-frost/ember-frost-file-picker.git",
   "engines": {
     "node": ">= 5.0.0"
   },
-  "author": "",
+  "author": "Eric White (https://github.com/EWhite613)",
+  "contributors": [
+    "Quincy Le (https://github.com/quincyle)",
+    "Gosia Hyndman (https://github.com/vesper2000)",
+    "Seena Rowhani (https://github.com/srowhani)",
+    "Roxanne Panthaky (https://github.com/rox163)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
     "ember-ajax": "0.7.1",
     "ember-browserify": "1.1.9",
-    "ember-cli": "~2.3.0",
+    "ember-cli": "~2.8.0",
     "ember-cli-app-version": "^1.0.0",
+    "ember-cli-code-coverage": "~0.3.4",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-import-polyfill": "0.2.0",
     "ember-cli-inject-live-reload": "^1.4.0",
-    "ember-cli-mirage": "~0.1.11",
     "ember-cli-mocha": "^0.10.0",
     "ember-cli-notifications": "^3.2.0",
-    "ember-cli-release": "0.2.8",
     "ember-cli-sass": "^5.2.0",
     "ember-cli-sri": "^2.0.0",
+    "ember-cli-test-loader": "1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-cli-visual-acceptance": "^1.3.15",
+    "ember-cli-visual-acceptance": "^2.2.0",
     "ember-computed-decorators": "0.2.2",
-    "ember-data": "~2.3.0",
+    "ember-concurrency": "0.7.15",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-frost-core": "0.11.10",
+    "ember-frost-core": "~0.29.0",
+    "ember-hook": "1.3.5",
     "ember-load-initializers": "^0.5.0",
     "ember-lodash": "0.0.7",
     "ember-one-way-controls": "0.8.2",
@@ -48,11 +58,13 @@
     "ember-resolver": "^2.0.3",
     "ember-sinon": "0.5.1",
     "ember-truth-helpers": "1.2.0",
-    "ember-try": "^0.2.0",
-    "eslint": "^2.9.0",
-    "eslint-config-frost-standard": "^2.0.0",
+    "eslint": "^3.4.0",
+    "eslint-config-frost-standard": "^4.0.0",
     "loader.js": "^4.0.0",
     "markdown-code-highlighting": "0.0.6",
+    "remark-cli": "^2.1.0",
+    "remark-lint": "^5.1.0",
+    "sass-lint": "^1.9.1",
     "svg4everybody": "2.0.3"
   },
   "keywords": [
@@ -63,7 +75,7 @@
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-sass": "^5.2.0",
-    "liquid-fire": "^0.22.0"
+    "liquid-fire": "~0.26.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
