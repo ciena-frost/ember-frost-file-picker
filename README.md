@@ -7,15 +7,33 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-file-picker.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-file-picker
 
-[![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+[ember-observer-badge]: http://emberobserver.com/badges/ember-frost-file-picker.svg "Ember Observer score"
+[ember-observer-badge-url]: http://emberobserver.com/addons/ember-frost-file-picker
+
+[ember-img]: https://img.shields.io/badge/ember-2.3+-orange.svg "Ember 2.3+"
+
+[bithound-img]: https://www.bithound.io/github/ciena-frost/ember-frost-popover/badges/score.svg "bitHound"
+[bithound-url]: https://www.bithound.io/github/ciena-frost/ember-frost-file-picker
 
 # ember-frost-file-picker
 A component for picking files
 
- * [Installation](#installation)
- * [API](#api)
- * [Examples](#examples)
- * [Development](#development)
+###### Dependencies
+
+![Ember][ember-img]
+[![NPM][npm-img]][npm-url]
+
+###### Health
+
+[![Travis][ci-img]][ci-url]
+[![Coveralls][cov-img]][cov-url]
+
+###### Security
+
+[![bitHound][bithound-img]][bithound-url]
+
+###### Ember Observer score
+[![EmberObserver][ember-observer-badge]][ember-observer-badge-url]
 
 ## Installation
 ```
@@ -32,15 +50,14 @@ ember install ember-frost-file-picker
 | `validate` | `string` | `<action-name>` | Action to trigger to validate file content |
 | `validateDrag` | `string` | `<action-name>` | Action to trigger to determine if `isDragging` should be applied. In Chrome, you can check event.dataTransfer.items[0] for information on the item being dragged |
 
-## Examples
+## Testing with ember-hook
+The file picker component is accessible using ember-hook with the top level hook name or you can access the internal components as well -
+* Default top level hook - `$hook('file-picker')`
+* Browse button hook - `$hook('<hook-name>-button')`
+* Input field hook - `$hook('<hook-name>-input')`
 
-### Example
-```handlebars
-{{frost-file-picker
- accept='.jpeg'
- validate=(action "validateFile")
- onChange=(action "fileChanged")}}
-```
+## Examples
+Detailed API and example usage can be found in the sample application in tests/dummy, which is also running at http://ciena-frost.github.io/ember-frost-file-picker
 
 ## Development
 ### Setup

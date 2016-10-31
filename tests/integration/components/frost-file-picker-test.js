@@ -1,11 +1,25 @@
 /* global capture, Blob */
 import Ember from 'ember'
 const {$} = Ember
-import {expect, assert} from 'chai'
-import {describeComponent, it} from 'ember-mocha'
+import {
+  expect,
+  assert
+} from 'chai'
+import {
+  describeComponent,
+  it
+} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
-import {afterEach, beforeEach, describe} from 'mocha'
+import {
+  afterEach,
+  beforeEach,
+  describe
+} from 'mocha'
 import sinon from 'sinon'
+import {
+  $hook,
+  initialize as initializeHook
+} from 'ember-hook'
 
 /**
  * Create a new file with the given content and options
@@ -43,6 +57,7 @@ describeComponent(
   function () {
     let sandbox
     beforeEach(function () {
+      initializeHook()
       sandbox = sinon.sandbox.create()
       this.setProperties({
         text: 'Custom placeholder',
@@ -57,12 +72,12 @@ describeComponent(
     describe('when no properties provided', function () {
       beforeEach(function () {
         this.render(hbs`
-          {{frost-file-picker}}
+          {{frost-file-picker hook='my-picker'}}
         `)
       })
 
       it('should render properly', function () {
-        expect(this.$('.frost-file-picker')).to.have.length(1)
+        expect($hook('my-picker')).to.have.length(1)
         return capture('Basic-File-Picker', {experimentalSvgs: true})
       })
 
@@ -85,19 +100,25 @@ describeComponent(
     describe('when placeholderText is given', function () {
       beforeEach(function () {
         this.render(hbs`
-          {{frost-file-picker placeholderText=text}}
+          {{frost-file-picker
+            hook='my-picker'
+            placeholderText=text
+          }}
         `)
       })
 
       it('should use the provided placeholder text', function () {
-        expect(this.$('.frost-text input').attr('placeholder')).to.eql('Custom placeholder')
+        expect($hook('my-picker-input').attr('placeholder')).to.eql('Custom placeholder')
       })
     })
 
     describe('when validateDrag is given', function () {
       beforeEach(function () {
         this.render(hbs`
-          {{frost-file-picker validateDrag=validateDragStub}}
+          {{frost-file-picker
+            hook='my-picker'
+            validateDrag=validateDragStub
+          }}
         `)
       })
 
@@ -105,7 +126,7 @@ describeComponent(
         let e
         beforeEach(function () {
           e = $.Event('dragenter')
-          this.$('.frost-file-picker').trigger(e)
+          $hook('my-picker').trigger(e)
         })
 
         it('should call validateDrag with the event', function () {
@@ -117,7 +138,7 @@ describeComponent(
         let e
         beforeEach(function () {
           e = $.Event('dragover')
-          this.$('.frost-file-picker').trigger(e)
+          $hook('my-picker').trigger(e)
         })
 
         it('should call validateDrag with the event', function () {

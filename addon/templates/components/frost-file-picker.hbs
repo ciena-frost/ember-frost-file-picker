@@ -3,10 +3,13 @@
 </div>
 <div class="background">
   {{frost-text
+    hook=hook
+    isHookEmbedded=true
     value=fileName
     placeholder=placeholderText
     readonly=true}}
   {{frost-button
+    hook=(concat hook '-button')
     size="small"
     priority="tertiary"
     text='Browse'}}
