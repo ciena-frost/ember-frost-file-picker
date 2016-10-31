@@ -1,3 +1,9 @@
+# 2.0.0
+- Updated to Ember 2.8 for LTS. 
+- Added linting. 
+- Added hooks in tests
+
+
 # 1.1.0
 * Added validateDrag parameter to determine if isDragging should be applied
 * Added placeholderText parameter to specify custom placeholder text
