@@ -1,3 +1,8 @@
+# 3.0.0
+**updated** prop-types and used them.
+
+
+
 # 2.0.0
 - Updated to Ember 2.8 for LTS. 
 - Added linting. 
