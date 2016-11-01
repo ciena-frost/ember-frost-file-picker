@@ -12,7 +12,7 @@
 
 [ember-img]: https://img.shields.io/badge/ember-2.3+-orange.svg "Ember 2.3+"
 
-[bithound-img]: https://www.bithound.io/github/ciena-frost/ember-frost-popover/badges/score.svg "bitHound"
+[bithound-img]: https://www.bithound.io/github/ciena-frost/ember-frost-file-picker/badges/score.svg "bitHound"
 [bithound-url]: https://www.bithound.io/github/ciena-frost/ember-frost-file-picker
 
 # ember-frost-file-picker
