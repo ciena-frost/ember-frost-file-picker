@@ -17,7 +17,7 @@
   },
   "repository": "git@github.com:ciena-frost/ember-frost-file-picker.git",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": ">= 6.0.0"
   },
   "author": "Eric White (https://github.com/EWhite613)",
   "contributors": [
@@ -29,8 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
-    "ember-ajax": "0.7.1",
-    "ember-browserify": "1.1.9",
+    "ember-browserify": "~1.1.9",
     "ember-cli": "~2.8.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-code-coverage": "~0.3.4",
@@ -39,12 +38,13 @@
     "ember-cli-import-polyfill": "0.2.0",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-mocha": "^0.10.0",
-    "ember-cli-notifications": "^3.2.0",
+    "ember-cli-notifications": "~4.0.0",
     "ember-cli-sass": "^5.2.0",
     "ember-cli-sri": "^2.0.0",
     "ember-cli-test-loader": "1.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-visual-acceptance": "^2.2.0",
+    "ember-code-snippet": "~1.8.0",
     "ember-computed-decorators": "0.2.2",
     "ember-concurrency": "0.7.15",
     "ember-disable-proxy-controllers": "^1.0.1",
@@ -52,7 +52,7 @@
     "ember-frost-core": "~0.29.0",
     "ember-hook": "~1.3.5",
     "ember-load-initializers": "^0.5.0",
-    "ember-lodash": "0.0.7",
+    "ember-lodash": "~0.0.7",
     "ember-one-way-controls": "0.8.2",
     "ember-prop-types": "~3.0.0",
     "ember-resolver": "^2.0.3",
@@ -61,11 +61,10 @@
     "eslint": "^3.4.0",
     "eslint-config-frost-standard": "^4.0.0",
     "loader.js": "^4.0.0",
-    "markdown-code-highlighting": "0.0.6",
     "remark-cli": "^2.1.0",
     "remark-lint": "^5.1.0",
     "sass-lint": "^1.9.1",
-    "svg4everybody": "2.0.3"
+    "svg4everybody": "^2.0.3"
   },
   "keywords": [
     "ember-addon",
