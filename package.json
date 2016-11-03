@@ -17,7 +17,7 @@
   },
   "repository": "git@github.com:ciena-frost/ember-frost-file-picker.git",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": ">= 6.0.0"
   },
   "author": "Eric White (https://github.com/EWhite613)",
   "contributors": [
