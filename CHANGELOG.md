@@ -1,3 +1,8 @@
+# 4.0.0
+**updated** minimum node version to 6.x
+
+
+
 # 3.0.0
 **updated** prop-types and used them.
 
