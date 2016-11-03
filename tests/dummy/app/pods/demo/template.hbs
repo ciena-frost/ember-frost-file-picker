@@ -5,18 +5,15 @@
   <div class='section'>
     <div class='example'>
       <div class='demo'>
+{{! BEGIN-SNIPPET simple}}
         {{frost-file-picker
           accept='.jpeg'
           hook='my-file-picker'
         }}
+        {{! END-SNIPPET}}
       </div>
       <div class='snippet'>
-        {{format-markdown "```handlebars
-{{frost-file-picker
-  accept='.jpeg'
-  hook='my-file-picker'
-}}
-```"}}
+        {{code-snippet name='simple.hbs'}}
       </div>
     </div>
   </div>
@@ -26,35 +23,29 @@
     <div class='example'>
       <div class="title">validate</div>
       <div class='demo'>
+        {{! BEGIN-SNIPPET validate}}
         {{frost-file-picker
           accept='.txt'
           validate=(action "validateFile")
         }}
+        {{! END-SNIPPET}}
       </div>
       <div class='snippet'>
-        {{format-markdown "```handlebars
-{{frost-file-picker
-  accept='.txt'
-  validate=(action 'validateFile')
-}}
-```"}}
+        {{code-snippet name='validate.hbs'}}
       </div>
     </div>
     <div class='example'>
       <div class="title">onChange</div>
       <div class='demo'>
+        {{! BEGIN-SNIPPET change}}
         {{frost-file-picker
           accept='.jpeg'
           onChange=(action "onChangeHandler")
         }}
+        {{! END-SNIPPET}}
       </div>
       <div class='snippet'>
-        {{format-markdown "```handlebars
-{{frost-file-picker
-  accept='.jpeg'
-  onChange=(action 'onChangeHandler')
-}}
-```"}}
+        {{code-snippet name='change.hbs'}}
       </div>
     </div>
   </div>
