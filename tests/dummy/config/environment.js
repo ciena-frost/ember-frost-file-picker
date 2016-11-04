@@ -39,7 +39,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/file-picker'
+    ENV.rootURL = '/ember-frost-file-picker'
     ENV.isDemo = true
   }
 
