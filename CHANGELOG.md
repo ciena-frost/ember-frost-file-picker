@@ -1,3 +1,7 @@
+# 5.0.0
+**upgraded** frost-core to 1.0.0
+
+
 # 4.0.1
 **fix** gh-pages demo.
 
