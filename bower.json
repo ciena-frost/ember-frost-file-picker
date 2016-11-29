@@ -5,13 +5,14 @@
     "ember-cli-shims": "0.1.0",
     "ember-inflector": "1.3.1",
     "ember-mocha": "~0.8.11",
+    "ember-mocha-adapter": "~0.3.1",
+    "es6-promise": "^3.2.2",
     "highlightjs": "^9.2.0",
     "lodash": "^4.10.0",
-    "perfect-scrollbar": ">=0.6.7 <2.0.0",
-    "sinonjs": "1.17.1",
     "marked": "^0.3.5",
     "resemblejs": "^2.2.0",
-    "es6-promise": "^3.2.2"
+    "sinonjs": "1.17.1"
+
   },
   "resolutions": {
     "ember": "~2.8.0"

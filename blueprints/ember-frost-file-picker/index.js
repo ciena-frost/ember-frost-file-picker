@@ -10,8 +10,9 @@ module.exports = {
   afterInstall: function () {
     return this.addAddonsToProject({
       packages: [
-        {name: 'ember-frost-core', target: '>=0.29.0 <2.0.0'},
-        {name: 'ember-hook', target: '~1.3.1'}
+        {name: 'ember-frost-core', target: '^1.0.0'},
+        {name: 'ember-prop-types', target: '^3.0.0'},
+        {name: 'ember-hook', target: '^1.3.1'}
       ]
     })
   }
