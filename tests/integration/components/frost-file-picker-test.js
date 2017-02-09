@@ -2,12 +2,11 @@
 import Ember from 'ember'
 const {$} = Ember
 import {expect, assert} from 'chai'
+import {setupComponentTest} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
 import {afterEach, beforeEach, describe, it} from 'mocha'
 import sinon from 'sinon'
 import {$hook, initialize as initializeHook} from 'ember-hook'
-
-import {integration} from 'dummy/tests/helpers/ember-test-utils/setup-component-test'
 
 /**
  * Create a new file with the given content and options
@@ -36,9 +35,10 @@ function uploadFileHelper (content, options) {
   $('input').trigger(event)
 }
 
-const test = integration('frost-file-picker')
-describe(test.label, function () {
-  test.setup()
+describe('Integration/ Component / frost-file-picker', function () {
+  setupComponentTest('frost-file-picker', {
+    integration: true
+  })
 
   let sandbox
   beforeEach(function () {
