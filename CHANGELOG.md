@@ -1,3 +1,9 @@
+# 5.1.0
+* **Updated** integration tests to remove the deprecated use of `describeComponent()`
+* **Updated** `ember-cli-mocha` to latest version
+* **Added**  `ember-cli-chai` since it has been broken out into a separate addon.
+* **Updated** ember-try configuration in `travis.yml` and `package.json`
+
 # 5.0.0
 **upgraded** frost-core to 1.0.0
 
