@@ -1,13 +1,15 @@
 import Ember from 'ember'
+const {Controller, RSVP, inject} = Ember
+const {service} = inject
 
-export default Ember.Controller.extend({
-  notifications: Ember.inject.service('notification-messages'),
+export default Controller.extend({
+  notifications: service('notification-messages'),
 
   selectedTab: 'readme',
 
   actions: {
     validateFile (file) {
-      return new Ember.RSVP.Promise((resolve) => {
+      return new RSVP.Promise((resolve) => {
         if (file != null) {
           this.get('notifications').success('Selected file of type: ' + file.type, {
             autoClear: true,
