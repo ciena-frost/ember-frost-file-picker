@@ -1,5 +1,5 @@
 import Ember from 'ember'
-const {Component, isNone, on, run} = Ember
+const {Component, RSVP, isNone, on, run} = Ember
 import layout from '../templates/components/frost-file-picker'
 import PropTypeMixin, {PropTypes} from 'ember-prop-types'
 
@@ -75,7 +75,7 @@ export default Component.extend(PropTypeMixin, {
 
     let self = this
     files.forEach((file) => {
-      new Ember.RSVP.Promise(function (resolve, reject) {
+      new RSVP.Promise(function (resolve, reject) {
         if (typeof (self.attrs['validate']) === 'function') {
           self.attrs['validate'](file).then((result) => {
             result.valid ? resolve(file) : reject(result)

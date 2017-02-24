@@ -11,10 +11,7 @@
     "build": "ember build",
     "test": "npm run lint && COVERAGE=true ember test",
     "ci-test": "ember try:one $EMBER_TRY_SCENARIO --- ember tva --push-var='false' --msg-on=$EMBER_TRY_SCENARIO",
-    "lint": "npm run eslint && npm run sass-lint && npm run md-lint",
-    "eslint": "eslint *.js addon app blueprints config tests --fix",
-    "md-lint": "remark *.md",
-    "sass-lint": "sass-lint -q -v"
+    "lint": "lint-all-the-things"
   },
   "repository": "git@github.com:ciena-frost/ember-frost-file-picker.git",
   "engines": {
@@ -58,14 +55,9 @@
     "ember-prop-types": "~3.0.0",
     "ember-resolver": "^2.0.3",
     "ember-sinon": "^0.5.1",
-    "ember-test-utils": "^1.1.2",
+    "ember-test-utils": "^1.10.7",
     "ember-truth-helpers": "^1.2.0",
-    "eslint": "^3.4.0",
-    "eslint-config-frost-standard": "^4.0.0",
-    "loader.js": "^4.0.0",
-    "remark-cli": "^2.1.0",
-    "remark-lint": "^5.1.0",
-    "sass-lint": "^1.9.1"
+    "loader.js": "^4.0.0"
   },
   "keywords": [
     "ember-addon",

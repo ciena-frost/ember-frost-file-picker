@@ -1,12 +1,12 @@
 /* global capture, Blob */
+import {assert, expect} from 'chai'
 import Ember from 'ember'
 const {$} = Ember
-import {expect, assert} from 'chai'
+import {$hook, initialize as initializeHook} from 'ember-hook'
 import {setupComponentTest} from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
 import {afterEach, beforeEach, describe, it} from 'mocha'
 import sinon from 'sinon'
-import {$hook, initialize as initializeHook} from 'ember-hook'
 
 /**
  * Create a new file with the given content and options
