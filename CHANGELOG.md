@@ -1,3 +1,7 @@
+# 5.1.1
+* **Updated** to use latest pr-bumper which supports being able to set a PR to `none` when publishing a new version is not desired.
+
+
 # 5.1.0
 * **Updated** integration tests to remove the deprecated use of `describeComponent()`
 * **Updated** `ember-cli-mocha` to latest version
