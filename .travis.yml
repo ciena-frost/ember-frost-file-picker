@@ -21,6 +21,7 @@ cache:
 
 env:
   matrix:
+  - EMBER_TRY_SCENARIO=ember-2-8
   - EMBER_TRY_SCENARIO=default
   - EMBER_TRY_SCENARIO=ember-release
   global:
@@ -41,16 +42,16 @@ install:
 - $(npm root -g)/pr-bumper/.travis/maybe-install.sh
 
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+- sleep 3 # give xvfb some time to start
 
 script:
 - $(npm root -g)/pr-bumper/.travis/maybe-test.sh
-- $(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh
+- .travis/maybe-bump-version.sh
 
 after_success:
-- $(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh
+- .travis/maybe-publish-coverage.sh
 - .travis/maybe-publish-gh-pages.sh
 
 deploy:
