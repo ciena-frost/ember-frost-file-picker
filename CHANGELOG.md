@@ -1,3 +1,7 @@
+# 5.1.4 (2017-05-05)
+* **Added** blueprint check
+* **Added** missing dependency to `ember-spread`
+
 # 5.1.3
 * **Updated** the travis.yml and package.json to run code coverage
 
