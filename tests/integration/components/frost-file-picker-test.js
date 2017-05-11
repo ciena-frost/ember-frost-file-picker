@@ -1,4 +1,4 @@
-/* global capture, Blob */
+/* global Blob */
 import {assert, expect} from 'chai'
 import Ember from 'ember'
 const {$} = Ember
@@ -63,7 +63,6 @@ describe('Integration/ Component / frost-file-picker', function () {
 
     it('should render properly', function () {
       expect($hook('my-picker')).to.have.length(1)
-      return capture('Basic-File-Picker', {experimentalSvgs: true})
     })
 
     describe('when uploading a file', function () {
@@ -73,11 +72,14 @@ describe('Integration/ Component / frost-file-picker', function () {
           assert.equal(e.target.files[0].type, 'text/plain', 'has a type of text/plain')
           assert.equal(e.target.files[0].name, 'test.txt', 'has the correct name')
         })
-        uploadFileHelper(['test'])
       })
 
       it('should render properly', function () {
-        return capture('File-upload', {experimentalSvgs: true})
+        uploadFileHelper(['test'])
+      })
+
+      afterEach(function () {
+        $('input').off('change')
       })
     })
   })

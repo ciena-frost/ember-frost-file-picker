@@ -12,7 +12,6 @@ module.exports = function (defaults) {
     snippetSearchPaths: ['tests/dummy']
   })
 
-  app.import('bower_components/sinonjs/sinon.js')
   app.import('bower_components/highlightjs/styles/github.css')
   /*
     This build file specifes the options for the dummy test app of this
