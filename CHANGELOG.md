@@ -1,3 +1,9 @@
+# 5.1.5 (2017-05-11)
+* **Updated** the secure tokens in `.travis.yml`
+* **Removed** `testem.json` in favor of `testem.js`
+* **Removed** `ember-cli-visual-acceptance` and any files it brought in or created
+
+
 # 5.1.4 (2017-05-05)
 * **Added** blueprint check
 * **Added** missing dependency to `ember-spread`
