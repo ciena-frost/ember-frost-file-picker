@@ -39,12 +39,12 @@ export default Component.extend(PropTypeMixin, {
   },
 
   bindChange: on('didInsertElement', function () {
-    this.$('.frost-file-select').on('change', run.bind(this, 'filesSelected'))
+    this._boundedFileSelect = run.bind(this, 'filesSelected')
+    this.$('.frost-file-select').on('change', this._boundedFileSelect)
   }),
   unbindChange: on('willDestroyElement', function () {
-    this.$('.frost-file-select').off('change', run.bind(this, 'filesSelected'))
+    this.$('.frost-file-select').off('change', this._boundedFileSelect)
   }),
-
   // == Functions =============================================================
 
   _getFiles (files) {
