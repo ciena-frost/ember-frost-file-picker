@@ -1,3 +1,7 @@
+# 5.1.6 (2017-05-16)
+Change DOM binding in bindChange and unbindChange function in case of memory leak
+
+
 # 5.1.5 (2017-05-11)
 * **Updated** the secure tokens in `.travis.yml`
 * **Removed** `testem.json` in favor of `testem.js`
