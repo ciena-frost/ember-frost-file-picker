@@ -1,3 +1,6 @@
+# 5.1.7 (2017-07-05)
+* Upgrade `ember-cli` to `2.12.3`
+
 # 5.1.6 (2017-05-16)
 Change DOM binding in bindChange and unbindChange function in case of memory leak
 
