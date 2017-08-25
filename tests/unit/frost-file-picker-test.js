@@ -14,8 +14,9 @@ describe('Unit / Component / frost-file-picker /', function () {
 
   describe('`proptypes` validation', function () {
     it('should have valid `proptypes` declaration', function () {
-      validatePropTypes(component)  // raises an exception if it fails
-      expect(true).to.equal(true)
+      expect(function () {
+        validatePropTypes(component)
+      }).not.to.throw()
     })
   })
 })
