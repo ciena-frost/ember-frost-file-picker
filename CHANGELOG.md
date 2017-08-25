@@ -1,3 +1,9 @@
+# 5.2.0 (2017-08-25)
+- The `accept` property (default '*') is no longer required
+- Fixed the specification of the file picker's proptypes
+- Added tests that validate `proptypes` of our component
+
+
 # 5.1.8 (2017-08-11)
 * Upgrade ember-cli 2.12.3 inter-dependencies
 
