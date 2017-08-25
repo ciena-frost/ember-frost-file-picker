@@ -65,6 +65,10 @@ describe('Integration/ Component / frost-file-picker', function () {
       expect($hook('my-picker')).to.have.length(1)
     })
 
+    it('should accept all files', function () {
+      expect($('input').attr('accept')).to.equal('*')
+    })
+
     describe('when uploading a file', function () {
       beforeEach(function () {
         $('input').on('change', function (e) {
@@ -96,6 +100,20 @@ describe('Integration/ Component / frost-file-picker', function () {
 
     it('should use the provided placeholder text', function () {
       expect($hook('my-picker-input').attr('placeholder')).to.eql('Custom placeholder')
+    })
+  })
+
+  describe('when accept is given', function () {
+    beforeEach(function () {
+      this.render(hbs`
+        {{frost-file-picker
+          accept='png'
+        }}
+      `)
+    })
+
+    it('should accept that file extension', function () {
+      expect($('input').attr('accept')).to.equal('png')
     })
   })
 
