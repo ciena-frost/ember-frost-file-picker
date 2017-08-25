@@ -40,6 +40,13 @@ module.exports = function (environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false
     ENV.APP.LOG_VIEW_LOOKUPS = false
 
+    ENV['ember-prop-types'] = {
+      requireComponentPropTypes: true,
+      throwErrors: true,  // Throw errors instead of logging warnings (default is false)
+      validate: true,
+      validateOnUpdate: true  // Validate properties when they are updated (default is false)
+    }
+
     ENV.APP.rootElement = '#ember-testing'
   }
 

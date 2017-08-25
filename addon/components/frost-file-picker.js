@@ -13,7 +13,7 @@ export default Component.extend(PropTypeMixin, {
 
   // == State Properties ======================================================
   propTypes: {
-    accept: PropTypes.string.required,
+    accept: PropTypes.string,
     hook: PropTypes.string,
     placeholderText: PropTypes.string
   },
