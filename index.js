@@ -5,10 +5,6 @@
 module.exports = {
   name: 'ember-frost-file-picker',
 
-  included: function (app) {
-    this._super.included(app)
-  },
-
   init: function () {
     this.options = this.options || {}
     this.options.babel = this.options.babel || {}
