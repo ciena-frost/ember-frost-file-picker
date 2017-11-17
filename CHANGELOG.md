@@ -1,3 +1,6 @@
+# 5.2.1 (2017-11-17)
+* #54 - Bind context to call of this._super.included() in index.js
+
 # 5.2.0 (2017-08-25)
 - The `accept` property (default '*') is no longer required
 - Fixed the specification of the file picker's proptypes
