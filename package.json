@@ -57,7 +57,6 @@
     "ember-sinon": "^0.5.1",
     "ember-source": "~2.12.0",
     "ember-test-utils": "^1.10.7",
-    "ember-truth-helpers": "^1.2.0",
     "loader.js": "^4.2.3"
   },
   "keywords": [
