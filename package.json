@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-file-picker",
-  "version": "5.2.1",
+  "version": "6.0.0",
   "description": "File picker component",
   "directories": {
     "doc": "doc",

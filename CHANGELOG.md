@@ -1,3 +1,17 @@
+# 6.0.0 (2017-12-06)
+* **Updated** to version 4 of `ember-frost-core`
+* **Updated** to version 5 of `ember-prop-types` and move to dependency
+* **Updated** to version 4 of `ember-cli-frost-blueprints`
+* **Updated** `ember-hook` from devDependencies to dependency
+* **Removed** `ember-spread` package since it is not used here and is now provided by `ember-frost-core` via it's own dependencies.
+* **Removed** `ember-computed-decorators` package since it is not used here and is now provided by `ember-frost-core` via it's own dependencies.
+* **Removed** `ember-concurrency` package since it is not used here and is now provided by `ember-frost-core` via it's own dependencies.
+* **Removed** `ember-elsewhere` package since it is not used here and is now provided by `ember-frost-core` via it's own dependencies.
+* **Removed** `ember-truth-helpers` package since it is not used here and is now provided by `ember-frost-core` via it's own dependencies.
+* **Removed** blueprint file since it is no longer being used
+* **Removed** `ember-cli-sass` from devDependencies since it is already in dependencies
+* **Removed** loading of babel configuration options previously needed for `ember-computed-decorators`
+
 # 5.2.1 (2017-11-17)
 * #54 - Bind context to call of this._super.included() in index.js
 
