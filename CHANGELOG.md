@@ -1,3 +1,27 @@
+# 7.0.0 (2018-01-05)
+* Remove `ember-cli-import-polyfill` NPM devDependency
+* Remove `ember-cli-sri` NPM devDependency
+* Remove `ember-lodash` NPM devDependency
+* Remove `ember-inflector` Bower dependency
+* Remove `lodash` Bower dependency
+* Remove useLintTree ember-cli-mocha configuration
+* Remove _package-lock.json_ until officially support Node 8
+* Downgrade and pin `ember-code-snippet` NPM devDependency to `1.7.0`
+* Pin `ember-cli-code-coverage` NPM devDependency to `0.3.12`
+* Pin `ember-hook` NPM dependency to `1.4.2`
+* Pin `highlightjs` Bower dependency to `9.12.0`
+* Pin `marked` Bower dependency to `0.3.6`
+* Update `bower` NPM devDependency to `^1.8.2`
+* Upgrade `ember-cli-frost-blueprints` NPM devDependency to `^5.0.1`
+* Upgrade `ember-cli-notifications` NPM devDependency to `^4.2.1`
+* Upgrade and pin `ember-cli-sass` NPM dependency to `7.1.1`
+* Upgrade `ember-browserify` NPM devDependency to `^1.2.0`
+* Upgrade `ember-frost-core` NPM dependency to `^5.0.0`
+* Upgrade `ember-prop-types` NPM dependency to `^6.0.1`
+* Install `ember-frost-test@^4.0.0`
+* Moved _config/coverage.js_ to _tests/dummy/config/coverage.js_
+  
+
 # 6.0.0 (2017-12-06)
 * **Updated** to version 4 of `ember-frost-core`
 * **Updated** to version 5 of `ember-prop-types` and move to dependency
