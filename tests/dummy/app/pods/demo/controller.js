@@ -29,7 +29,7 @@ export default Controller.extend({
     },
 
     onChangeHandler (attrs) {
-      var file = attrs.value
+      const file = attrs.value
       this.get('notifications').success('Changed filename: ' + file.name, {
         autoClear: true,
         clearDuration: 2000

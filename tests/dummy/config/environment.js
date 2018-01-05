@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = function (environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
     podModulePrefix: 'dummy/pods',
     environment: environment,
@@ -42,9 +42,9 @@ module.exports = function (environment) {
 
     ENV['ember-prop-types'] = {
       requireComponentPropTypes: true,
-      throwErrors: true,  // Throw errors instead of logging warnings (default is false)
+      throwErrors: true, // Throw errors instead of logging warnings (default is false)
       validate: true,
-      validateOnUpdate: true  // Validate properties when they are updated (default is false)
+      validateOnUpdate: true // Validate properties when they are updated (default is false)
     }
 
     ENV.APP.rootElement = '#ember-testing'
