@@ -34,6 +34,16 @@ function uploadFileHelper (content, options) {
   }
   $('input').trigger(event)
 }
+/**
+ * Trigger change event with no file file selected
+ */
+function fileSelectionCanceledHelper () {
+  const event = $.Event('change')
+  event.target = {
+    files: []
+  }
+  $('input').trigger(event)
+}
 
 describe('Integration/ Component / frost-file-picker', function () {
   setupComponentTest('frost-file-picker', {
@@ -70,16 +80,28 @@ describe('Integration/ Component / frost-file-picker', function () {
     })
 
     describe('when uploading a file', function () {
+      let onChangeCounter = 0
       beforeEach(function () {
         $('input').on('change', function (e) {
-          assert.equal(e.target.files[0].size, 4, 'has a size of 4')
-          assert.equal(e.target.files[0].type, 'text/plain', 'has a type of text/plain')
-          assert.equal(e.target.files[0].name, 'test.txt', 'has the correct name')
+          // onChange event raised by uploadFileHelper (file selection)
+          if (onChangeCounter === 0) {
+            assert.equal(e.target.files[0].size, 4, 'has a size of 4')
+            assert.equal(e.target.files[0].type, 'text/plain', 'has a type of text/plain')
+            assert.equal(e.target.files[0].name, 'test.txt', 'has the correct name')
+            // input value of the frost text input is set to the file name
+            expect($.find('.frost-text-input')[0].value).to.eql('test.txt')
+          } else { // onChange event raised by fileSelectionCanceledHelper (file selection canceled= no files selected)
+            assert.equal(e.target.files.length, 0, 'event has no files')
+            // input value of the frost text input has not changed => still the same file name
+            expect($.find('.frost-text-input')[0].value).to.eql('test.txt')
+          }
         })
       })
 
-      it('should render properly', function () {
+      it('should render properly when file selected or selection canceled', function () {
         uploadFileHelper(['test'])
+        onChangeCounter++
+        fileSelectionCanceledHelper()
       })
 
       afterEach(function () {

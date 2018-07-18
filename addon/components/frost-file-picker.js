@@ -1,5 +1,5 @@
 import Ember from 'ember'
-const {Component, RSVP, isNone, on, run} = Ember
+const {Component, RSVP, isBlank, isNone, on, run} = Ember
 import layout from '../templates/components/frost-file-picker'
 import PropTypeMixin, {PropTypes} from 'ember-prop-types'
 
@@ -56,7 +56,11 @@ export default Component.extend(PropTypeMixin, {
 
   _updateFileName (files) {
     const name = files.reduce((e, r) => `${e}${r.name}, `, '')
-    this.set('fileName', name.slice(0, -2))
+    const trimmedName = name.slice(0, -2)
+    // do not update file name if no file is selected
+    if (!isBlank(trimmedName)) {
+      this.set('fileName', trimmedName)
+    }
   },
 
   fireHandler (file) {
