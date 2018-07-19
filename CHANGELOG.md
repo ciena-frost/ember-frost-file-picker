@@ -1,3 +1,9 @@
+# 9.0.2 (2018-07-19)
+
+* fix for Cancel selection in file browser causes loss of original file selection
+
+
+
 # 9.0.1 (2018-05-30)
 * **Updated** Pin `ember-cli-notifications` to version `4.2.1` to fix broken demo app
 
