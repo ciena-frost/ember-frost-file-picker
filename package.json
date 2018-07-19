@@ -22,7 +22,6 @@
   },
   "author": "Eric White (https://github.com/EWhite613)",
   "contributors": [
-    "Jeremy Brown (https://github.com/notmessenger)",
     "Michael Carroll (https://github.com/juwara0)",
     "David Fortin (https://github.com/dafortin)",
     "Gosia Hyndman (https://github.com/vesper2000)",
@@ -31,7 +30,8 @@
     "Roxanne Panthaky (https://github.com/rox163)",
     "Phillip Plummer (https://github.com/TheOtherDude)",
     "Seena Rowhani (https://github.com/srowhani)",
-    "Igor Raspopovic (https://github.com/iraspopo)"
+    "Igor Raspopovic (https://github.com/iraspopo)",
+    "Sophy Pal (https://github.com/sophypal)"
   ],
   "license": "MIT",
   "devDependencies": {
