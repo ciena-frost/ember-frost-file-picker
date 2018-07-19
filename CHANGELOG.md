@@ -1,3 +1,7 @@
+# 9.0.4 (2018-07-19)
+
+* Fixing builds
+
 # 9.0.2 (2018-07-19)
 
 * fix for Cancel selection in file browser causes loss of original file selection
