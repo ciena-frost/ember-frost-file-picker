@@ -1,3 +1,8 @@
+# 9.0.5 (2018-07-20)
+
+* **Fixed** Travis API key.
+
+
 # 9.0.4 (2018-07-19)
 
 * Fixing builds
