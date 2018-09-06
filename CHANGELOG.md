@@ -1,3 +1,8 @@
+# 9.0.6 (2018-09-06)
+
+* **Fixed** Travis API key.
+
+
 # 9.0.5 (2018-07-20)
 
 * **Fixed** Travis API key.
